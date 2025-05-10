@@ -33,7 +33,7 @@ const Hero = () => {
               JavaScript, TypeScript, React, Angular, Node.js, Express, MongoDB.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
             <Link
               href="#projects"
               className="btn-primary bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors"

@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   creator: "Syed Shahriar",
   publisher: "Syed Shahriar",
   robots: "index, follow",
+  icons: {
+    icon: "/ss-logo.svg",
+    shortcut: "/ss-logo.svg",
+    apple: "/ss-logo.svg",
+  },
 };
 
 export default function RootLayout({
