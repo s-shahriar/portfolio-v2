@@ -46,7 +46,7 @@ const Experience = () => {
     },
     {
       id: 2,
-      role: "Project Co-Ordinator (Contractual)",
+      role: "Project Co-Ordinator",
       company: "Robi Axiata Limited",
       location: "Dhaka, Bangladesh",
       duration: "July 2023 - October 2024",
