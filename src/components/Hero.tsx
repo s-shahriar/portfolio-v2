@@ -8,12 +8,12 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center bg-secondary text-white py-20"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-        <div className="space-y-6 md:pr-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-center pb-12 md:pb-0">
+        <div className="space-y-6 text-center md:text-left md:pr-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
             Hi, I&apos;m{" "}
             <span className="text-primary">
-              <TypewriterEffect text="Syed Shahriar" delay={150} />
+              <TypewriterEffect text="Shahriar" delay={150} />
             </span>
             <br />A Software Engineer
           </h1>
