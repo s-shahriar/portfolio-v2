@@ -121,7 +121,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-20 bg-gray-50 dark:bg-gray-800"
+      className="py-20 bg-gray-50 dark:bg-dark"
       ref={sectionRef}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,7 +159,7 @@ const Education = () => {
                 {/* Content */}
                 <div className="md:w-1/2 md:px-8">
                   <div
-                    className={`${item.bgColor} ${item.borderColor} border rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+                    className={`${item.bgColor} dark:bg-gray-700 ${item.borderColor} dark:border-gray-600 border rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
                   >
                     {/* Header with gradient */}
                     <div
@@ -243,7 +243,7 @@ const Education = () => {
                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                               />
                             </svg>
-                            <p className="text-gray-600 dark:text-gray-300 italic">
+                            <p className="text-gray-600 dark:text-gray-200 italic">
                               {item.nostalgic}
                             </p>
                           </div>
@@ -268,7 +268,7 @@ const Education = () => {
                                     d="M5 13l4 4L19 7"
                                   />
                                 </svg>
-                                <p className="text-gray-600 dark:text-gray-300">
+                                <p className="text-gray-600 dark:text-gray-200">
                                   {point.trim()}.
                                 </p>
                               </div>

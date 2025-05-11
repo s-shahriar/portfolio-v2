@@ -239,7 +239,7 @@ const DevelopmentRoadmap = () => {
             (item, index) => (
               <div
                 key={index}
-                className={`rounded-lg border ${item.color} p-6 transition-all hover:shadow-md`}
+                className={`rounded-lg border ${item.color} dark:bg-gray-700 dark:border-gray-600 p-6 transition-all hover:shadow-md`}
               >
                 <div className="flex items-center mb-4">
                   <div className="p-2 rounded-md bg-white/50 dark:bg-gray-600/50 mr-3">
@@ -250,7 +250,7 @@ const DevelopmentRoadmap = () => {
                   </h3>
                 </div>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 dark:text-gray-200 mb-4">
                   {item.description}
                 </p>
 

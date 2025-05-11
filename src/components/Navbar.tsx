@@ -13,12 +13,12 @@ const Navbar = () => {
     () => [
       { name: "Home", href: "#home" },
       { name: "About", href: "#about" },
-      { name: "Education", href: "#education" },
-      { name: "Skills", href: "#skills" },
+      { name: "Experience", href: "#experience" },
       { name: "Projects", href: "#projects" },
+      { name: "Skills", href: "#skills" },
+      { name: "Education", href: "#education" },
       { name: "Coding", href: "#coding-activity" },
       { name: "Roadmap", href: "#development-roadmap" },
-      { name: "Experience", href: "#experience" },
       { name: "Contact", href: "#contact" },
     ],
     []

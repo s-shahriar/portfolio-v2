@@ -170,7 +170,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-dark">
       <div className="container mx-auto">
         <h2 className="section-title mb-4 dark:text-white">My Skills</h2>
         <p className="text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-12">
@@ -199,7 +199,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className={`skill-tag ${skill.color} px-3 py-1.5 rounded-full text-sm font-medium inline-block mb-2 transition-all duration-200 hover:shadow-sm`}
+                    className={`skill-tag ${skill.color} dark:bg-gray-600 dark:text-white px-3 py-1.5 rounded-full text-sm font-medium inline-block mb-2 transition-all duration-200 hover:shadow-sm`}
                   >
                     {skill.name}
                   </span>
@@ -230,7 +230,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className={`skill-tag ${skill.color} px-3 py-1.5 rounded-full text-sm font-medium inline-block mb-2 transition-all duration-200 hover:shadow-sm`}
+                    className={`skill-tag ${skill.color} dark:bg-gray-600 dark:text-white px-3 py-1.5 rounded-full text-sm font-medium inline-block mb-2 transition-all duration-200 hover:shadow-sm`}
                   >
                     {skill.name}
                   </span>
