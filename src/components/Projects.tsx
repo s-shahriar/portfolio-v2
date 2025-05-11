@@ -139,15 +139,19 @@ const Projects = () => {
         />
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-600 mb-4">{project.description}</p>
+      <div className="p-6 dark:bg-gray-800">
+        <h3 className="text-xl font-bold mb-2 dark:text-white">
+          {project.title}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="text-xs px-2 py-1 bg-gray-100 rounded-full"
+              className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded-full"
             >
               {tech}
             </span>
@@ -155,10 +159,10 @@ const Projects = () => {
         </div>
 
         <div className="mt-4 mb-4">
-          <div className="text-sm text-gray-700 mb-2 font-medium">
+          <div className="text-sm text-gray-700 dark:text-gray-300 mb-2 font-medium">
             Key Features:
           </div>
-          <ul className="text-sm text-gray-600 space-y-1 list-disc pl-4">
+          <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc pl-4">
             {project.features.map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
@@ -190,7 +194,7 @@ const Projects = () => {
 
           <Link
             href={project.codeLink}
-            className="text-gray-600 hover:text-gray-800 flex items-center gap-1"
+            className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 flex items-center gap-1"
             target="_blank"
           >
             <svg
@@ -209,7 +213,7 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-dark">
       <div className="container mx-auto">
         <h2 className="section-title">Featured Projects</h2>
 

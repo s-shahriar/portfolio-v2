@@ -193,12 +193,14 @@ const DevelopmentRoadmap = () => {
   };
 
   return (
-    <section id="development-roadmap" className="py-20 bg-gray-50">
+    <section id="development-roadmap" className="py-20 bg-gray-50 dark:bg-dark">
       <div className="container mx-auto">
-        <h2 className="section-title">Personal Development Roadmap</h2>
+        <h2 className="section-title dark:text-white">
+          Personal Development Roadmap
+        </h2>
 
         <div className="mt-8 text-center">
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
             Continuous learning is at the core of my professional journey.
             Here's what I'm currently focused on and what I'm planning to
             explore next.
@@ -212,7 +214,7 @@ const DevelopmentRoadmap = () => {
               className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
                 activeTab === "current"
                   ? "bg-primary text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
               }`}
               onClick={() => setActiveTab("current")}
             >
@@ -223,7 +225,7 @@ const DevelopmentRoadmap = () => {
               className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
                 activeTab === "planned"
                   ? "bg-primary text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
               }`}
               onClick={() => setActiveTab("planned")}
             >
@@ -240,23 +242,29 @@ const DevelopmentRoadmap = () => {
                 className={`rounded-lg border ${item.color} p-6 transition-all hover:shadow-md`}
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-md bg-white/50 mr-3">
+                  <div className="p-2 rounded-md bg-white/50 dark:bg-gray-600/50 mr-3">
                     {item.icon}
                   </div>
-                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <h3 className="text-lg font-bold dark:text-white">
+                    {item.title}
+                  </h3>
                 </div>
 
-                <p className="text-gray-700 mb-4">{item.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {item.description}
+                </p>
 
                 {activeTab === "current" && "progress" in item && (
                   <div className="mb-4">
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium">Progress</span>
-                      <span className="text-sm font-medium">
+                      <span className="text-sm font-medium dark:text-gray-300">
+                        Progress
+                      </span>
+                      <span className="text-sm font-medium dark:text-gray-300">
                         {item.progress}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5">
                       <div
                         className="bg-primary h-2.5 rounded-full"
                         style={{ width: `${item.progress}%` }}
@@ -281,7 +289,7 @@ const DevelopmentRoadmap = () => {
                 )}
 
                 <div className="mt-4">
-                  <h4 className="text-sm font-semibold mb-2">
+                  <h4 className="text-sm font-semibold mb-2 dark:text-gray-200">
                     Learning Resources:
                   </h4>
                   <ul className="space-y-1">

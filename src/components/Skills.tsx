@@ -170,10 +170,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto">
-        <h2 className="section-title mb-4">My Skills</h2>
-        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        <h2 className="section-title mb-4 dark:text-white">My Skills</h2>
+        <p className="text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-12">
           A collection of technologies and tools I've worked with throughout my
           career
         </p>
@@ -182,7 +182,7 @@ const Skills = () => {
           {skillCategories.slice(0, 2).map((category, index) => (
             <div
               key={index}
-              className={`${category.bgColor} border ${category.borderColor} rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full`}
+              className={`${category.bgColor} dark:bg-gray-700 border ${category.borderColor} dark:border-gray-600 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full`}
             >
               <div className="flex items-center gap-4 mb-6">
                 <div
@@ -190,7 +190,7 @@ const Skills = () => {
                 >
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                   {category.title}
                 </h3>
               </div>
@@ -213,7 +213,7 @@ const Skills = () => {
           {skillCategories.slice(2).map((category, index) => (
             <div
               key={index + 2}
-              className={`${category.bgColor} border ${category.borderColor} rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full`}
+              className={`${category.bgColor} dark:bg-gray-700 border ${category.borderColor} dark:border-gray-600 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full`}
             >
               <div className="flex items-center gap-4 mb-6">
                 <div
@@ -221,7 +221,7 @@ const Skills = () => {
                 >
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                   {category.title}
                 </h3>
               </div>

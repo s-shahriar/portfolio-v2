@@ -21,14 +21,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-dark">
       <div className="container mx-auto">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title dark:text-white">Get In Touch</h2>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Contact Information */}
           <div className="space-y-8">
-            <p className="text-lg text-gray-600 text-center md:text-left">
+            <p className="text-lg text-gray-600 dark:text-gray-300 text-center md:text-left">
               I&apos;m interested in freelance opportunities, especially
               ambitious or large projects. However, if you have other requests
               or questions, don&apos;t hesitate to contact me.
@@ -36,7 +36,7 @@ const Contact = () => {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-4 justify-start">
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -53,7 +53,9 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h3 className="text-lg font-medium text-gray-800">Email</h3>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">
+                    Email
+                  </h3>
                   <a
                     href="mailto:syedshahriar.kuet@gmail.com"
                     className="text-primary hover:underline"
@@ -64,7 +66,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start space-x-4 justify-start">
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -87,15 +89,17 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h3 className="text-lg font-medium text-gray-800">
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">
                     Location
                   </h3>
-                  <p className="text-gray-600">Dhaka, Bangladesh</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Dhaka, Bangladesh
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 justify-start">
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -112,10 +116,10 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h3 className="text-lg font-medium text-gray-800">
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-white">
                     Working Hours
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     Monday - Friday: 9:00 AM - 6:00 PM
                   </p>
                 </div>
@@ -175,7 +179,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
             <form
               action={`mailto:syedshahriar.kuet@gmail.com?subject=${encodeURIComponent(
                 formData.subject
@@ -187,7 +191,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Your Name
                 </label>
@@ -198,7 +202,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="John Doe"
                 />
               </div>
@@ -206,7 +210,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Your Email
                 </label>
@@ -217,7 +221,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="john@example.com"
                 />
               </div>
@@ -225,7 +229,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Subject
                 </label>
@@ -236,7 +240,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -244,7 +248,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Message
                 </label>
@@ -255,7 +259,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Your message here..."
                 ></textarea>
               </div>

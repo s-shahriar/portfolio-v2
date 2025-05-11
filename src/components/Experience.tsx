@@ -113,14 +113,18 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-20 bg-gray-50" ref={sectionRef}>
+    <section
+      id="experience"
+      className="py-20 bg-gray-50 dark:bg-gray-800"
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Work Experience
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             My professional journey has equipped me with valuable experience in
             software development and project coordination.
           </p>
@@ -128,7 +132,7 @@ const Experience = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 dark:bg-gray-600"></div>
 
           {experiences.map((item, index) => (
             <div
@@ -144,7 +148,7 @@ const Experience = () => {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 top-10 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-primary z-10"></div>
+                <div className="hidden md:block absolute left-1/2 top-10 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white dark:bg-gray-800 border-4 border-primary z-10"></div>
 
                 {/* Content */}
                 <div className="md:w-1/2 md:px-8">
@@ -185,7 +189,7 @@ const Experience = () => {
                             d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                           />
                         </svg>
-                        <p className="text-gray-700 font-medium">
+                        <p className="text-gray-700 dark:text-gray-300 font-medium">
                           {item.location}
                         </p>
                       </div>
@@ -205,10 +209,12 @@ const Experience = () => {
                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                           />
                         </svg>
-                        <p className="text-gray-600">{item.duration}</p>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          {item.duration}
+                        </p>
                       </div>
 
-                      <div className="border-t border-gray-200 pt-4">
+                      <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
                         <div>
                           {item.description.map((point, idx) => (
                             <div
@@ -229,13 +235,15 @@ const Experience = () => {
                                   d="M5 13l4 4L19 7"
                                 />
                               </svg>
-                              <p className="text-gray-600">{point}</p>
+                              <p className="text-gray-600 dark:text-gray-300">
+                                {point}
+                              </p>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200">
+                      <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
                         {item.technologies.map((tech, i) => (
                           <span
                             key={i}

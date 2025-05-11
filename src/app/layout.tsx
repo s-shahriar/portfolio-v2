@@ -1,3 +1,4 @@
+import ThemeProviderWrapper from "@/context/ThemeProviderWrapper";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
@@ -43,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
-        {children}
+        <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
       </body>
     </html>
   );

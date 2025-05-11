@@ -126,14 +126,14 @@ const CodingActivity = () => {
   ];
 
   return (
-    <section id="coding-activity" className="py-20 bg-white">
+    <section id="coding-activity" className="py-20 bg-white dark:bg-dark">
       <div className="container mx-auto">
-        <h2 className="section-title">Coding Activity</h2>
+        <h2 className="section-title dark:text-white">Coding Activity</h2>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* LeetCode Stats */}
-          <div className="bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
-            <h3 className="text-xl font-bold mb-6 text-gray-800">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
+            <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">
               LeetCode Activity
             </h3>
 
@@ -403,8 +403,8 @@ const CodingActivity = () => {
           </div>
 
           {/* Recent Repositories */}
-          <div className="bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
-            <h3 className="text-xl font-bold mb-6 text-gray-800">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
+            <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">
               Recent Repositories
             </h3>
 
@@ -417,7 +417,7 @@ const CodingActivity = () => {
                 {recentRepos.map((repo, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-4 hover:border-primary shadow-sm hover:shadow transition-all"
+                    className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-4 hover:border-primary shadow-sm hover:shadow transition-all"
                   >
                     <Link
                       href={repo.url}
@@ -426,18 +426,18 @@ const CodingActivity = () => {
                     >
                       {repo.name}
                     </Link>
-                    <p className="text-gray-600 text-sm mt-1">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
                       {repo.description}
                     </p>
                     <div className="flex items-center gap-4 mt-3">
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-300">
                         <span
                           className="inline-block w-3 h-3 rounded-full mr-1"
                           style={{ backgroundColor: repo.languageColor }}
                         ></span>
                         {repo.language}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-300">
                         <svg
                           className="w-4 h-4 mr-1"
                           fill="currentColor"
@@ -447,7 +447,7 @@ const CodingActivity = () => {
                         </svg>
                         {repo.stars}
                       </div>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-300">
                         <svg
                           className="w-4 h-4 mr-1"
                           fill="currentColor"

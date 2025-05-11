@@ -119,14 +119,18 @@ const Education = () => {
   }, []);
 
   return (
-    <section id="education" className="py-20 bg-gray-50" ref={sectionRef}>
+    <section
+      id="education"
+      className="py-20 bg-gray-50 dark:bg-gray-800"
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Educational Journey
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             My academic background has equipped me with the knowledge and skills
             needed to excel in the field of technology and engineering.
           </p>
@@ -134,7 +138,7 @@ const Education = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 dark:bg-gray-600"></div>
 
           {educationData.map((item, index) => (
             <div
@@ -150,7 +154,7 @@ const Education = () => {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 top-10 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-primary z-10"></div>
+                <div className="hidden md:block absolute left-1/2 top-10 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white dark:bg-gray-800 border-4 border-primary z-10"></div>
 
                 {/* Content */}
                 <div className="md:w-1/2 md:px-8">
@@ -191,7 +195,7 @@ const Education = () => {
                             d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                           />
                         </svg>
-                        <p className="text-gray-700 font-medium">
+                        <p className="text-gray-700 dark:text-gray-300 font-medium">
                           {item.institution}
                         </p>
                       </div>
@@ -217,10 +221,12 @@ const Education = () => {
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           />
                         </svg>
-                        <p className="text-gray-600">{item.location}</p>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          {item.location}
+                        </p>
                       </div>
 
-                      <div className="border-t border-gray-200 pt-4">
+                      <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
                         {item.id === 3 ? (
                           <div className="flex items-start">
                             <svg
@@ -237,7 +243,7 @@ const Education = () => {
                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                               />
                             </svg>
-                            <p className="text-gray-600 italic">
+                            <p className="text-gray-600 dark:text-gray-300 italic">
                               {item.nostalgic}
                             </p>
                           </div>
@@ -262,7 +268,9 @@ const Education = () => {
                                     d="M5 13l4 4L19 7"
                                   />
                                 </svg>
-                                <p className="text-gray-600">{point.trim()}.</p>
+                                <p className="text-gray-600 dark:text-gray-300">
+                                  {point.trim()}.
+                                </p>
                               </div>
                             ))}
                           </div>
