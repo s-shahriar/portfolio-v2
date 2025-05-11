@@ -242,7 +242,7 @@ const DevelopmentRoadmap = () => {
                 className={`rounded-lg border ${item.color} dark:bg-gray-700 dark:border-gray-600 p-6 transition-all hover:shadow-md`}
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-md bg-white/50 dark:bg-gray-600/50 mr-3">
+                  <div className="p-2 rounded-md bg-white/50 dark:bg-blue-500/30 mr-3 text-gray-800 dark:text-blue-300">
                     {item.icon}
                   </div>
                   <h3 className="text-lg font-bold dark:text-white">

@@ -144,11 +144,11 @@ const CodingActivity = () => {
             ) : (
               <div className="space-y-6">
                 {/* User Info and Total Card */}
-                <div className="bg-blue-100 border border-blue-300 rounded-lg p-6 shadow-sm hover:shadow transition-all">
+                <div className="bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-indigo-900/40 dark:to-blue-900/30 border border-indigo-200 dark:border-indigo-700 rounded-lg p-6 shadow-sm hover:shadow transition-all">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {/* LeetCode Logo */}
-                      <div className="p-2 rounded-md bg-white/50 text-amber-500">
+                      <div className="p-2 rounded-md bg-white/70 dark:bg-indigo-800/50 text-amber-500 dark:text-amber-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="32"
@@ -160,10 +160,12 @@ const CodingActivity = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-blue-800">
+                        <h4 className="text-lg font-bold text-indigo-800 dark:text-indigo-300">
                           syedshahriar99
                         </h4>
-                        <span className="text-blue-600 text-sm">#934045</span>
+                        <span className="text-indigo-600 dark:text-indigo-400 text-sm">
+                          #934045
+                        </span>
                       </div>
                     </div>
 
@@ -173,14 +175,16 @@ const CodingActivity = () => {
                         <path
                           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                           fill="none"
-                          stroke="#FDE68A"
+                          stroke="#D8B4FE"
                           strokeWidth="3"
+                          className="dark:opacity-30"
                         />
                         <path
                           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                           fill="none"
-                          stroke="#F59E0B"
+                          stroke="#8B5CF6"
                           strokeWidth="3"
+                          className="dark:opacity-80"
                           strokeDasharray="100, 100"
                           strokeDashoffset={
                             100 -
@@ -194,7 +198,7 @@ const CodingActivity = () => {
                       </svg>
                       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                         <div className="text-center">
-                          <span className="text-2xl font-bold text-amber-600">
+                          <span className="text-2xl font-bold text-violet-600 dark:text-violet-400">
                             {leetCodeStats.totalSolved}
                           </span>
                         </div>
@@ -202,16 +206,16 @@ const CodingActivity = () => {
                     </div>
                   </div>
 
-                  <div className="mt-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 bg-gray-50 dark:bg-gray-800/50 p-3 rounded-lg">
                     {leetCodeStats.ranking && (
-                      <div className="text-blue-800">
+                      <div className="text-indigo-800 dark:text-indigo-300 text-center">
                         <span className="font-medium">Global Ranking:</span> #
                         {leetCodeStats.ranking.toLocaleString()}
                       </div>
                     )}
 
                     {leetCodeStats.acceptanceRate && (
-                      <div className="text-blue-800">
+                      <div className="text-indigo-800 dark:text-indigo-300 text-center">
                         <span className="font-medium">Acceptance Rate:</span>{" "}
                         {leetCodeStats.acceptanceRate.toFixed(1)}%
                       </div>
