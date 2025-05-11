@@ -72,11 +72,11 @@ const About = () => {
           </div>
 
           <div className="md:col-span-3 space-y-5">
-            <h3 className="text-2xl font-bold text-gray-800">
+            <h3 className="text-2xl font-bold text-gray-800 text-center md:text-left">
               Software Engineer & Problem Solver
             </h3>
 
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-center md:text-left">
               I&apos;m a passionate software engineer with experience building
               web applications and services. My journey in tech began with an
               Electronics and Communications Engineering degree, where I
@@ -84,7 +84,7 @@ const About = () => {
               systems.
             </p>
 
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-center md:text-left">
               I specialize in frontend development with expertise in
               JavaScript/TypeScript, React, Angular, and RESTful API
               integration. I&apos;m driven by creating elegant solutions to
@@ -92,7 +92,7 @@ const About = () => {
               impact.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex flex-wrap gap-3 pt-4 justify-center md:justify-start">
               <a
                 href="https://github.com/s-shahriar"
                 target="_blank"

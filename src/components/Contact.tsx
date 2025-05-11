@@ -28,14 +28,14 @@ const Contact = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Contact Information */}
           <div className="space-y-8">
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 text-center md:text-left">
               I&apos;m interested in freelance opportunities, especially
               ambitious or large projects. However, if you have other requests
               or questions, don&apos;t hesitate to contact me.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 justify-start">
                 <div className="bg-primary/10 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h3 className="text-lg font-medium text-gray-800">Email</h3>
                   <a
                     href="mailto:syedshahriar.kuet@gmail.com"
@@ -63,7 +63,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 justify-start">
                 <div className="bg-primary/10 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h3 className="text-lg font-medium text-gray-800">
                     Location
                   </h3>
@@ -94,7 +94,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 justify-start">
                 <div className="bg-primary/10 p-3 rounded-full text-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h3 className="text-lg font-medium text-gray-800">
                     Working Hours
                   </h3>
@@ -122,7 +122,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4 pt-4">
+            <div className="flex space-x-4 pt-4 justify-center md:justify-start">
               <a
                 href="https://github.com/s-shahriar"
                 target="_blank"

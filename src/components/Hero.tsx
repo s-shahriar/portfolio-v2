@@ -10,12 +10,15 @@ const Hero = () => {
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-center pb-12 md:pb-0">
         <div className="space-y-6 text-center md:text-left md:pr-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-8 sm:mt-0">
             Hi, I&apos;m{" "}
             <span className="text-primary">
               <TypewriterEffect text="Shahriar" delay={150} />
             </span>
-            <br />A Software Engineer
+            <br />
+            <span className="text-2xl sm:text-3xl lg:text-4xl">
+              A Software Engineer
+            </span>
           </h1>
           <p className="text-lg text-gray-300 max-w-lg">
             I build exceptional digital experiences with clean, efficient code

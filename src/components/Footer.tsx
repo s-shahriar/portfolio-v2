@@ -8,11 +8,11 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 text-center md:text-left">
             <Link href="/" className="text-primary font-bold text-2xl">
               Syed <span className="text-white">Shahriar</span>
             </Link>
-            <p className="mt-4 text-gray-400 max-w-md">
+            <p className="mt-4 text-gray-400 max-w-md mx-auto md:mx-0">
               A passionate software engineer specializing in creating
               exceptional digital experiences with clean, efficient code and
               creative problem-solving.
@@ -20,10 +20,10 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-gray-400">
+              <li className="flex items-center gap-2 text-gray-400 justify-center md:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-primary"
@@ -45,7 +45,7 @@ const Footer = () => {
                   syedshahriar.kuet@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-gray-400">
+              <li className="flex items-center gap-2 text-gray-400 justify-center md:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-primary"
@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
             </ul>
 
-            <div className="flex space-x-4 mt-6">
+            <div className="flex space-x-4 mt-6 justify-center md:justify-start">
               <a
                 href="https://github.com/s-shahriar"
                 target="_blank"
