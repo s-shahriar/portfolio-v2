@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+interface ProjectType {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  demoLink: string;
+  codeLink: string;
+  features: string[];
+}
+
 const Projects = () => {
   const projects = [
     {
@@ -112,7 +123,7 @@ const Projects = () => {
   ];
 
   // Render a project card
-  const renderProjectCard = (project) => (
+  const renderProjectCard = (project: ProjectType) => (
     <div
       key={project.id}
       className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
