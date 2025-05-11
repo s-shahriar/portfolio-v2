@@ -10,6 +10,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,6 +20,49 @@ const Contact = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Format the email body with proper HTML
+    const emailBody = `
+Hello Syed Shahriar,
+
+You have received a new message from your portfolio website:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+Best regards,
+Your Portfolio Contact Form
+    `.trim();
+
+    // Create the mailto link with properly encoded subject and body
+    const mailtoLink = `mailto:syedshahriar.kuet@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    // Show success message
+    setShowSuccess(true);
+
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setShowSuccess(false);
+    }, 3000);
+
+    // Open the email client
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -180,14 +225,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <form
-              action={`mailto:syedshahriar.kuet@gmail.com?subject=${encodeURIComponent(
-                formData.subject
-              )}`}
-              method="POST"
-              encType="text/plain"
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -264,12 +302,24 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors"
-              >
-                Send Message
-              </button>
+              {showSuccess ? (
+                <div
+                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                  role="alert"
+                >
+                  <strong className="font-bold">Success! </strong>
+                  <span className="block sm:inline">
+                    Your message has been sent.
+                  </span>
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors"
+                >
+                  Send Message
+                </button>
+              )}
             </form>
           </div>
         </div>

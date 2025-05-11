@@ -145,7 +145,7 @@ const About = () => {
                 LeetCode
               </a>
               <a
-                href="https://drive.google.com/drive/u/0/folders/1h30-XOUtyDfZrZGO-9q97v5zS1BjqXe3"
+                href="https://drive.google.com/file/d/1TBvHIUPr3GXVeUcNE2IU4qBUHKZxp2gM/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
