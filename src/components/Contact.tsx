@@ -1,8 +1,29 @@
 "use client";
 
-import { useState } from "react";
+/**
+ * Contact Form with EmailJS Integration
+ *
+ * To set up EmailJS:
+ * 1. Install the package: npm install @emailjs/browser
+ * 2. Create a free account at https://www.emailjs.com/
+ * 3. Add an email service (Gmail, Outlook, etc.)
+ * 4. Create an email template with the following variables:
+ *    - {{user_name}}
+ *    - {{user_email}}
+ *    - {{subject}}
+ *    - {{message}}
+ * 5. Replace the placeholders in the code:
+ *    - YOUR_SERVICE_ID: Found in Email Services tab
+ *    - YOUR_TEMPLATE_ID: Found in Email Templates tab
+ *    - YOUR_PUBLIC_KEY: Found in Account > API Keys
+ */
+
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,58 +32,65 @@ const Contact = () => {
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    // Map EmailJS field names to our state properties
+    const fieldMap: Record<string, string> = {
+      user_name: "name",
+      user_email: "email",
+      subject: "subject",
+      message: "message",
+    };
+
+    const stateField = fieldMap[name] || name;
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [stateField]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setShowError(false);
 
-    // Format the email body with proper HTML
-    const emailBody = `
-Hello Syed Shahriar,
+    // Replace these with your actual EmailJS service, template, and public key
+    // You'll need to sign up at emailjs.com and create these
+    const serviceId = "service_vjq9sjr";
+    const templateId = "template_xhr6iw6"; // Replace with your template ID
+    const publicKey = "cd5MNjfRWzJioVCli"; // Replace with your public key
 
-You have received a new message from your portfolio website:
+    // Send the email using EmailJS
+    emailjs
+      .sendForm(serviceId, templateId, form.current!, {
+        publicKey: publicKey,
+      })
+      .then(() => {
+        // Show success message
+        setShowSuccess(true);
+        setLoading(false);
 
-Name: ${formData.name}
-Email: ${formData.email}
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
-Best regards,
-Your Portfolio Contact Form
-    `.trim();
-
-    // Create the mailto link with properly encoded subject and body
-    const mailtoLink = `mailto:syedshahriar.kuet@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(emailBody)}`;
-
-    // Show success message
-    setShowSuccess(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+          setShowSuccess(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Email sending failed:", error);
+        setShowError(true);
+        setLoading(false);
       });
-      setShowSuccess(false);
-    }, 3000);
-
-    // Open the email client
-    window.location.href = mailtoLink;
   };
 
   return (
@@ -225,7 +253,7 @@ Your Portfolio Contact Form
 
           {/* Contact Form */}
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -236,7 +264,7 @@ Your Portfolio Contact Form
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="user_name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -255,7 +283,7 @@ Your Portfolio Contact Form
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="user_email"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -302,7 +330,7 @@ Your Portfolio Contact Form
                 ></textarea>
               </div>
 
-              {showSuccess ? (
+              {showSuccess && (
                 <div
                   className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                   role="alert"
@@ -312,14 +340,55 @@ Your Portfolio Contact Form
                     Your message has been sent.
                   </span>
                 </div>
-              ) : (
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors"
-                >
-                  Send Message
-                </button>
               )}
+
+              {showError && (
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                  role="alert"
+                >
+                  <strong className="font-bold">Error! </strong>
+                  <span className="block sm:inline">
+                    Failed to send your message. Please try again later.
+                  </span>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors ${
+                  loading ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center">
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  "Send Message"
+                )}
+              </button>
             </form>
           </div>
         </div>
